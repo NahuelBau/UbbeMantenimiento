@@ -1,0 +1,47 @@
+.card-container {
+  display: flex;
+  max-height: 520px;
+  height: auto;
+  overflow-y: scroll;
+}
+.card{
+  padding: 2px
+}
+
+
+.upper {
+  padding: 20px;
+  color: rgba(0, 0, 0, 0.472)
+}
+
+hr.new1 {
+  border-top: 2px dashed rgba(0, 0, 0, 0.472)
+}
+
+.bottom {
+  height: auto;
+  padding: 20px;
+  color: black;
+}
+
+.muted-text {
+  font-size: 1rem;
+  color: #1a1a1aa3
+}
+
+.font-weight-bold{
+  font-weight: 500;
+  font-size: .9rem;
+}
+
+.containerDaysLeft {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  /* background-color: rgb(64, 63, 63); */
+}
+
+.containerDaysLeft span {
+  color: black;
+}

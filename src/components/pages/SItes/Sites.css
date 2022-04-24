@@ -1,0 +1,14 @@
+.contenedor_equipos{
+  font-size: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+}
+
+.btn-contenedor .btn-secondary{
+  display: block;
+  width: 200px;
+  position: relative;
+  margin: auto; 
+  font-size: 17px; 
+}

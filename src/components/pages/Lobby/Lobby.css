@@ -1,0 +1,26 @@
+/* esta es una parte que engloba todos los hijos (home, equipos, crear, etc) */
+.contenedor_principal{
+  padding: 20px;
+  height: 100%;
+  font-size: 10px;
+  
+}
+
+.lobby__container{
+  display: flex;  
+  padding: 10px;
+  align-items: center;
+}
+
+.lobby__user_container{
+  padding: 10px;
+  display: flex;
+  font-size: 0.9rem;
+  justify-content: space-between;
+  border-radius: 20px;
+  background-color: white;
+}
+
+.lobby__planilla_container{
+  background-color: white;
+}

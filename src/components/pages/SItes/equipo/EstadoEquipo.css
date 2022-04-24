@@ -1,0 +1,13 @@
+
+.constenedor_estado{
+  display: grid;
+  flex-direction: row;
+  
+  
+}
+
+.r1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

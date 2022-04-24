@@ -1,0 +1,6 @@
+.crear__contenedor{
+  display: flex;
+  flex-direction: column;
+  font-size: 10px;
+  /* margin: 0 auto; */
+}
