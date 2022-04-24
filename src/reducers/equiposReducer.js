@@ -9,6 +9,8 @@ const initialState = {
   DeviceTypeAvalible: [],
   DeviceAvalible: [],
 
+  equiposOrdenados: [],
+
   WZSelected: null,
   SiteSelected: null,
   DeviceTypeSelected: null,

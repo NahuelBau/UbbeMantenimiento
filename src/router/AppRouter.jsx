@@ -15,12 +15,9 @@ export const AppRouter = () => {
   const dispatch = useDispatch();
   
   const {checking, uid} = useSelector( state => state.auth );
-  
-
 
   useEffect(() => {
     dispatch(startCheckin());
-    // dispatch(uiCloseModal())
   }, [dispatch, uid])
 
 

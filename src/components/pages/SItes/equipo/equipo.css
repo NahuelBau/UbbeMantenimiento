@@ -39,9 +39,12 @@ hr.new1 {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  /* background-color: rgb(64, 63, 63); */
 }
 
 .containerDaysLeft span {
   color: black;
+}
+
+.buttonsito{
+  width: auto;
 }

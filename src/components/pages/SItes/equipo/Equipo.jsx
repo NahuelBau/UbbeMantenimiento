@@ -13,26 +13,28 @@ export const Equipo = () => {
 
   const dispatch = useDispatch()
   const navigate = useNavigate()
-  
+
   moment().format();
   const { device } = useSelector(state => state.equipos);
-  
-  const { 
-    workZoneName, 
-    siteName, 
-    deviceName, 
-    factor, 
-    hrsFunc, 
-    horasUltimoService, 
+
+  const {
+    workZoneName,
+    siteName,
+    deviceName,
+    factor,
+    hrsFunc,
+    horasUltimoService,
     horasUltimoServiceDay,
     horasActuales,
     horasActualesDay,
-    _id
-    } = device;
+    _id,
+  } = device;
 
-  let horasActualesFormatDay = moment(horasActualesDay).add(1,'d').format('DD/MM/yy')
-  let horasUltimoServiceDayFormat = moment(horasUltimoServiceDay).add(1,'d').format('D/MM/y')
+  let horasActualesFormatDay = moment(horasActualesDay).add(1, 'd').format('DD/MM/yy')
+  let horasUltimoServiceDayFormat = moment(horasUltimoServiceDay).add(1, 'd').format('D/MM/y')
 
+  const diasFaltantes = factor / hrsFunc;
+  const diaDelElService = moment(horasUltimoServiceDay).add(diasFaltantes+1, 'd').format('D/MM/y')
 
 
   const openModal1 = () => {
@@ -60,7 +62,7 @@ export const Equipo = () => {
       },
       buttonsStyling: false
     })
-    
+
     swalWithBootstrapButtons.fire({
       text: `¿Está seguro de borrar el equipo ${deviceName}?`,
       icon: 'warning',
@@ -73,12 +75,12 @@ export const Equipo = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         const resp = dispatch(startDeleteDevice(_id))
-        if(resp){
-          navigate('/equipos', {replace: true})
+        if (resp) {
+          navigate('/equipos', { replace: true })
           swalWithBootstrapButtons.fire({
             icon: 'success',
             title: 'El equipo fue eliminado',
-            timer: 3000 ,
+            timer: 3000,
             position: 'top',
             toast: true,
             showConfirmButton: false,
@@ -92,21 +94,19 @@ export const Equipo = () => {
     })
   }
 
-  const status =  () => {
+  const status = () => {
     navigate('/equipos/equipo/status');
   }
-  
-  
+
+
 
 
   return (
     <div className="d-grid">
-      <button className="btn btn-danger btn-sm col-2 mx-auto" onClick={borrarEquipo}><i class="bi bi-trash"></i></button>
       <Modal_1 />
       <Modal_2 />
       <Modal_3 />
       <Modal_4 />
-
 
       <div className="card mt-2 pb-3">
         <div className="row">
@@ -141,15 +141,22 @@ export const Equipo = () => {
               </div>
             </div>
 
+            <div className='card mt-2' >
+              <div className="d-flex flex-column mb-2">
+                <span className="muted-text">Proximo service: </span>
+                {/* <span className="font-weight-bold">en { } dias </span> */}
+                <span className="font-weight-bold">{diaDelElService}</span>
+              </div>
+            </div>
 
           </div>
-          
+
           <div className='col-6'>
             <h2></h2>
             <div className='card' onClick={openModal3}>
               <div className="d-flex flex-column mb-2">
                 <h6>Datos Actuales </h6>
-                
+
                 <span className="muted-text">Horas</span>
                 <span className="font-weight-bold"> {horasActuales}</span>
               </div>
@@ -169,12 +176,17 @@ export const Equipo = () => {
                 <span className="muted-text">Fecha</span>
                 <span className="font-weight-bold">{horasUltimoServiceDayFormat}</span>
               </div>
-            </div>
 
+            </div>
 
             <div className="d-flex p-2  mt-2 containerDaysLeft card " onClick={status}>
               <StatusIndicator />
             </div>
+
+            <div className='card d-grid p-2 mt-2'>
+              <button className="btn btn-danger btn-xl col-2 buttonsito" onClick={borrarEquipo}><i className="bi bi-trash"></i></button>
+            </div>
+
 
           </div>
         </div>

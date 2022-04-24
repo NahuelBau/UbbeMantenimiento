@@ -26,17 +26,17 @@ export const StatusIndicator = () => {
     <div>
       
       {
-        one && <span className="muted-text">Estado: <span className="font-weight-bold text-success"><i class="bi bi-circle-fill text-success"></i> OK.</span></span>
+        one && <span className="muted-text">Estado: <span className="font-weight-bold text-success"><i className="bi bi-circle-fill text-success"></i> OK.</span></span>
       }
       
       {
 
-        two  &&  <span className="muted-text">Estado: <span className="font-weight-bold text-warning"><i class="bi bi-circle-fill text-warnig"></i> Con observaciones.</span></span>
+        two  &&  <span className="muted-text">Estado: <span className="font-weight-bold text-warning"><i className="bi bi-circle-fill text-warnig"></i> Con observaciones.</span></span>
       }
 
 
       {
-        three && <span className="muted-text">Estado: <span className="font-weight-bold text-danger"><i class="bi bi-circle-fill text-danger"></i> Fuerda de servicio.</span></span>
+        three && <span className="muted-text">Estado: <span className="font-weight-bold text-danger"><i className="bi bi-circle-fill text-danger"></i> Fuerda de servicio.</span></span>
       } 
     </div>
   )

@@ -434,8 +434,8 @@ export const Modal_6 = () => {
 
           <div className="row" >
 
-            <div class="form-floating">
-              <textarea class="form-control text-area-custom mb-2" placeholder="Escriba las observaciones..." id="floatingTextarea" onChange={observaciones}></textarea>
+            <div className="form-floating">
+              <textarea className="form-control text-area-custom mb-2" placeholder="Escriba las observaciones..." id="floatingTextarea" onChange={observaciones}></textarea>
               <label for="floatingTextarea">Observaciones</label>
             </div>
 
